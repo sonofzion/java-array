@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oyetunji Atilade Array Document</title>
+    <link rel="stylesheet" href="./arraycss.css">
+</head>
+<body>
+    
+    <div id="users">
+
+    </div>
+    <script>
+
+/* Static arrays*/
+internalUsers = [
+{   "pics" :"./imgs/1.jpg",
+        "name" : "Samuel Yusuf",
+        "email" : "sam@tiide.com",
+        "phone" : "0811283784897"
+    },
+    {   "pics" :"./imgs/3.jpg",
+        "name" : "Ekheso Longe",
+        "email" : "longe@tiide.com",
+        "phone" : "054365634497"
+    },
+    {   "pics" :"./imgs/2.jfif",
+        "name" : "Arimoro Ezekiel",
+        "email" : "zik@tiide.com",
+        "phone" : "0811283784897"
+    },
+    {   "pics" :"./imgs/4.jpg",
+        "name" : "Oyetunji Atilade",
+        "email" : "tunj@tiide.com",
+        "phone" : "0811283784897"
+    }
+     
+]
+
+/* function to add more arrays */
+    function add() {
+        user = 
+    {   "pics" :"https://picsum.photos/200/300",
+        "name" :  prompt("Enter full name"),
+        "email" : prompt("Enter email"),
+        "phone" : prompt("Enter phone number")
+    }
+
+internalUsers.push(user)
+        display()
+    
+    }   
+
+
+/* function to delete an array*/
+    function deleteUser(array) { //adds another info about a company
+		con = confirm("Are you sure you want to delete fellow?")
+		if (con == true) {
+			internalUsers.splice(array, 1);
+			display();
+
+		}
+    }
+    
+    /*Function to display static and updated array*/
+
+    function display() {
+         usersCont = ''
+        for(i=0; i<internalUsers.length; i++){
+
+            /* append content into the array */
+        usersCont += `<div class= "cont">
+                    <img src="${internalUsers[i].pics}"> <br>
+                    <strong>Full Name</strong> : ${internalUsers[i].name} <br> 
+                    <strong>Email</strong> : ${internalUsers[i].email} <br>
+                    <strong>Phone</strong> : ${internalUsers[i].phone} <br>
+                    <button onClick="deleteUser(${i});">Delete </button>&nbsp; <button class="edit" onClick="editUser(${i});">Edit </button> 
+                        <hr>
+                    </div>`}
+                    document.getElementById("users").innerHTML = usersCont // Inject content into users container's HTML
+    }
+       
+    display() // display array
+                    
+    </script>
+<!-- add user button -->
+<button class="add" onclick= "add();" >Add user</button>    
+</body>
+</html>

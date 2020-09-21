@@ -1,0 +1,43 @@
+
+/* general styling for the body */
+body {
+    width: 60%;
+    margin: auto; 
+    
+   }
+
+/* image styling */
+img {
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+}
+
+/* users container styling */
+#users {
+    margin-top: 50px;
+    margin-bottom: 10px;
+    background: royalblue;
+   
+}
+
+/* button styling */
+button {
+    border-radius: 2px;
+    background: rebeccapurple;
+}
+
+/* styling for edit button */
+.edit {
+    background: rosybrown;
+}
+
+/* styling for add user button */
+.add {
+    background: silver;
+    margin-bottom: 100px;
+}
+
+.cont {
+    padding: 40px;
+}
